@@ -1,6 +1,7 @@
 ﻿using Laboratorio_3_OOP_201902.Cards;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
 
 namespace Laboratorio_3_OOP_201902
@@ -91,6 +92,24 @@ namespace Laboratorio_3_OOP_201902
         public void Play()
         {
             throw new NotImplementedException();
+        }
+
+        public void Leer()
+
+        {
+            string path = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName + @"\Files\Decks.txt";
+
+            StreamReader deckReader = new StreamReader(Decks.txt);
+            StreamReader captainReader = new StreamReader(Captains.txt);
+
+            //tengo que leer las listas ya hechas y escribirlas en el txt
+
+            string[] start = "START";
+
+            StreamWriter deckWriter = new StreamWriter(Decks.txt,
+                                                       start);
+
+
         }
     }
 }
